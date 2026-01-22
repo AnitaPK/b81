@@ -7,6 +7,118 @@
 body{
     background-color: #93ac93;
 }
-#sectionOne{
 
+nav{
+    height: 80px;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 4rem;
+}
+
+.navLists{
+    list-style-type: none;
+}
+.navItem{
+    display: inline-block;
+    margin: 30px 10px;
+}
+
+.navLink{
+    font-family: cursive;
+    font-size: x-large;
+}
+.navLink:hover{
+    text-decoration: underline;
+    color: red;
+}
+.logoDiv img{
+    border-radius: 50%;
+}
+
+
+#sectionOne{
+    height: 500px;
+    background-color: rgba(138, 209, 247, 0.5);
+}
+.sectionOneClass{
+    display: flex;
+    justify-content: center;
+    /* padding-top: 1rem; */
+}
+.leftSide h3{
+    margin: 20px;
+    font-size: 170%;
+    text-shadow: 2px 2px 3px red;
+}
+.leftSide h1{
+    margin: 30px;
+    font-size: 2.7rem;
+    background-color: #0101f7;
+    color: white;
+    padding: 5px;
+}
+.btn-Blue{
+    background-color: #0101f7;
+    color: #ffffff;
+    border: 0;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 9px;
+}
+.btn-Blue:hover{
+    box-shadow: 1px 1px 2px 1px gray;
+}
+
+.rightSide{
+    height: 500px;
+}
+.rightSide img{
+    width: 500px;
+    height: 100%;
+}
+.borderRadiusImg{
+    border-radius: 0 0 0 4rem;
+
+}
+#sectionTwo{
+    background-color: antiquewhite;
+}
+
+
+
+/* products  */
+.storeNear{
+    background-color: white;
+    height: 200px;
+    width: 80%;
+    margin: 1rem auto;
+    border-radius: 1rem;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+footer{
+    background-color: antiquewhite;
+    height: 200px;
+}
+
+a:link{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: underline;
+    color: blue;
+}
+a:active{
+
+}
+a:visited{
+    color: black;
+}
+.links{
+    display: flex;
+    justify-content: space-evenly;
 }
