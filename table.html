@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        table, th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th{
+            background-color: gray;
+        }
+        td{
+        }
+        tr{
+            background-color: pink;
+        }
+        tr:nth-child(even){
+            /* background-color: red; */
+        }
+        tr:hover{
+            background-color: gray;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <table style="width: 100%;">
+        <thead>
+            <tr>
+                <th>Sr No</th>
+                <!-- <th>First Name</th> -->
+                <!-- <th>Last Name</th> -->
+                 <th colspan="2">Full Name</th>
+                <th>Conatct Number</th>
+                <th>Email Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">001</td>
+                <td rowspan="2">Kareena</td>
+                <td rowspan="2">Kapoor</td>
+                <td >234567890</td>
+                <td rowspan="2">kareena@gmail.com</td>
+            </tr>
+            <tr>
+                <td>6666433333</td>
+            </tr>
+            <tr>
+                <a href="#">
+                <td>002</td>
+                <td>Karishma</td>
+                <td>Kapoor</td>
+                <td>934567890</td>
+                <td>karishma@gmail.com</td>
+                </a>
+            </tr>
+            <tr>
+                <td>003</td>
+                <td>Sara</td>
+                <td>Ali Khan</td>
+                <td>934567890</td>
+                <td>sara@gmail.com</td>
+            </tr>
+            <tr>
+                <td>004</td>
+                <td>Saif</td>
+                <td>Ali Khan</td>
+                <td>934567890</td>
+                <td>saif@gmail.com</td>
+            </tr>
+            <tr>
+                <td>005</td>
+                <td>Taimur</td>
+                <td>Ali Khan</td>
+                <td>434567890</td>
+                <td>taimur@gmail.com</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="margin: 10px auto; width: 50%;">
+<iframe src="./icecreamShop/index.html" style="width: 100%; height: 50vh;"></iframe>
+
+</div>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.6240991074296!2d73.75057237423955!3d18.590978282516332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2beb5315379ab%3A0x7745e38574812a65!2sWisdom%20Sprouts%20IT%20Training%20Hub!5e0!3m2!1sen!2sin!4v1769496593926!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gyK6nZvZym4?si=F6r5X0_7IWyAsuw-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<video autoplay>
+    <source src=".mp4">
+    <source src="fgh.ogg">
+    Your Browser can not support
+</video>
+
+
+</body>
+</html>
