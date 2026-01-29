@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Form</title>
+</head>
+
+<body>
+    <form method="get">
+        <label for="nameInput">Name <sup style="color: red;">*</sup></label>
+        <input type="text" required id="nameInput" />
+        <label>
+            Contact Number
+        </label>
+        <input type='text' pattern="^[6-9]{1}[0-9]{9}" placeholder="8889999672" />
+        <label>Age</label>
+        <input type="number" step="10"/>
+
+<label>
+    email
+</label>
+<input type="email" />
+
+
+<label>Password</label>
+<input type="password" value="123456" name="password"/>
+
+<label>Upload Marksheet</label>
+<input type="file" />
+
+<label>Birth Date</label>
+<input type="date" />
+<label>Appointment</label>
+<input type="datetime-local" />
+
+<label for="">Color</label>
+<input type="color" value="#0000ff"/>
+<label>Price</label>
+<input type="range" min="0" max="500" value="400" name="price"/>
+
+
+
+<label>Message</label>
+<textarea rows="10" cols="40"></textarea>
+
+<label>Gender</label>
+ <input type="radio" value="male" name="gender"/>Male
+ <input type="radio" value="female" name="gender"/>Female
+
+
+<label>Select Subject</label>
+<input type="checkbox" />HTML
+<input type="checkbox" />CSS
+<input type="checkbox" />Javascript
+
+<select multiple name="district">
+    <option value="nashik">Nashik</option>
+    <option value="satara">Satara</option>
+    <option value="kolhapur">Kolhapur</option>
+    <option value="sangali">Sangali</option>
+</select>
+
+
+
+        <button>Register</button>
+        <input type="submit" />
+        <input type="reset" />
+
+
+    </form>
+</body>
+
+</html>
+
+
+<!-- [0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}
+
+^[6-9]{1}[0-9]{9}       -->

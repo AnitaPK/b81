@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .loginContainer{
+            display: flex;
+            border: 1px solid black;
+            /* justify-content: center; */
+            background-color: black;
+        }
+        .leftImageContainer{
+            color: red;
+            flex: 50%;
+        }
+        .logoClass{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .rightformConatiner{
+            background-color: rgb(20, 60, 49);
+            flex: 50%;
+            padding: 3rem 1rem;
+
+        }
+        .inputEmail{
+            width: 500px;
+            background-color: rgb(20, 60, 49);
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 10px;
+        }
+        .loginBTN{
+            width: 500px;
+            background-color: rgb(58, 142, 251);
+            color: white;
+            border-radius: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="loginContainer">
+        <div class="leftImageContainer">
+            <img src="./assets/instaLogo.jpeg" class="logoClass"/>
+            <br />
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <img src="./assets/instaGirl.jpeg" alt="" />
+        </div>
+        <div class="rightformConatiner">
+            <h3>Log into Instagram</h3>
+            <form>
+                <div style="margin-bottom: 10px;">
+                <input 
+                type="text" 
+                placeholder="Mobile Number , Username, Email"
+                class="inputEmail"
+                />
+                </div>
+                <div>
+                <input 
+                type="password" 
+                placeholder="Password"
+                class="inputEmail"
+                />
+                </div>
+                <div>
+                    <input type="submit" class="loginBTN" disabled value="LOGIN"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
