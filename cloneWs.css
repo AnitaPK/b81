@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif !important;
+}
+body{
+    background-color: rgb(169, 253, 229);
+}
+#heroSection{
+    position: relative;
+}
+
+.heroSction{
+    display: flex;
+    padding: 2rem;
+}
+.leftContent{
+    flex: 50%;
+}
+.badgeWhite{
+    background-color: white;
+    border-radius: 13px;
+    width: 180px;
+    padding: 10px;
+}
+.leftContent h1{
+    font-size: 3rem;
+    color: rgb(4, 73, 58);
+}
+.leftContent p{
+    font-size: 2rem;
+}
+
+.rightImage{
+    flex: 50%;
+    position: relative;
+}
+
+.girlImg{
+background-color: transparent;
+mix-blend-mode: multiply;
+height: 500px;
+
+   
+}
+.fileImg{
+background-color: transparent;
+mix-blend-mode: multiply;
+width: 100px;
+height: 120px;
+position: absolute;
+z-index: 5;
+top:50px;
+right: 100px;
+}
+
+.contentAtCenter{
+    position: absolute;
+    left: 40%;
+    bottom: 3rem;
+    background-color: rgba(255,255,255,0.3);
+    display: flex;
+    padding: 10px 20px;
+}
+.contentAtCenter h3{
+    font-size: x-large;
+}
+.contentAtCenter p{
+    font-size: large;
+
+}
+.contentAtCenter i{
+    font-size: 2rem;
+    /* background-color:red ; */
+}
