@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Grid</title>
+    <style>
+        .heading{
+            color: blue;
+            font-size: 70px;
+        }
+        .headerImg{
+            width: 100%;
+            height: 300px;
+        }
+        .containerOne{
+            display: grid;
+            /* grid-template-columns: 120px 120px 120px;
+            grid-template-rows: 120px 120px 120px; */
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(5,200px);
+        }
+        .box{
+            /* width: 100px; */
+            /* height: 100px; */
+            background-color: red;
+        }
+        .griContainerFruit{
+            display: grid;
+            width: 430px;
+            gap:15px;
+        }
+        .grapes{
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            height: 100px;
+            width: 100px;
+            background-color: rgb(42, 22, 62);
+        }
+        .strawberry{
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            height: 100px;
+            width: 100px;
+            background-color: #ff4747;
+        }
+        .watermelon{
+              grid-row-start: 1;
+            grid-row-end: 3;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            height: 270px;
+            width: 200px;
+            background-color: #dca0a0;
+        }
+        .orange{
+            grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            height: 150px;
+            width: 225px;
+            background-color: #f57125;
+        }
+        .papaya{
+            grid-row-start: 3;
+            grid-row-end: 4;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            height: 150px;
+            width: 225px;
+            background-color: #f5ba25;
+        }
+        .pineapple{
+            grid-row-start: 3;
+            grid-row-end: 4;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            height: 150px;
+            width: 200px;
+            background-color: #466723;
+        }
+        .gridContainerLayout{
+            display: grid; 
+            grid-template-areas: 'headerOne headerOne headerOne headerOne'
+                                'Navbar Navbar Navbar Navbar'
+                                'leftSide mai mai rightSide'
+                                'foo foo foo foo'
+            ;  
+
+        }
+        header{
+            grid-area: headerOne;
+            height: 100px;
+        }
+        nav{
+            grid-area: Navbar;
+            height: 90px;
+            background-color: rgb(218, 218, 255);
+        }
+        .asideLeft{
+            grid-area: leftSide;
+            height: 300px;
+            border: 1px solid gray;
+        }
+        main{
+            grid-area: mai;
+            height: 300px;
+        }
+        .asideRight{
+            grid-area: rightSide;
+            height: 300px;
+            border: 1px solid gray;
+        }
+        footer{
+            grid-area: foo;
+            height: 200px;
+            background-color: gray;
+        }
+        @media screen and (max-width:600px){
+                body{
+                    background-color: pink;
+                }
+                .heading{
+                    font-size: 30px;
+                }
+                .headerImg{
+                    display: none;
+                }
+                .gridContainerLayout{
+                               grid-template-areas: 'headerOne'
+                                'Navbar'
+                                'mai'
+                                'leftSide'
+                                'rightSide'
+                                'foo'
+            ;
+                }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">Learn Grid</h1>
+    <img src="./assets/nature.jpeg" alt="imgNature" class="headerImg" />
+    <div class="gridContainerLayout">
+        <header></header>
+        <nav></nav>
+        <aside class="asideLeft"></aside>
+        <main></main>
+        <aside class="asideRight"></aside>
+        <footer></footer>
+
+    </div>
+    <div class="griContainerFruit">
+        <div class="grapes"></div>
+        <div class="strawberry"></div>
+        <div class="watermelon"></div>
+        <div class="orange"></div>
+        <div class="papaya"></div>
+        <div class="pineapple"></div>
+    </div>
+    <div class="containerOne">
+        <div class="gridItem1 box"></div>
+        <div class="gridItem2 box"></div>
+        <div class="gridItem3 box"></div>
+        <div class="gridItem4 box"></div>
+        <div class="gridItem5 box"></div>
+        <div class="gridItem6 box"></div>
+    </div>
+</body>
+</html>

@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif !important;
+    font-family: 'Montserrat', sans-serif;
 }
 body{
     background-color: rgb(169, 253, 229);
@@ -70,7 +70,8 @@ right: 100px;
     font-size: large;
 
 }
-.contentAtCenter i{
+/* .contentAtCenter i{
     font-size: 2rem;
-    /* background-color:red ; */
-}
+    color: blue;
+    /* background-color:red ; 
+} */
