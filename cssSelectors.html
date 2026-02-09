@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            box-sizing: border-box;
+        }
+        /* p{
+            color: red;
+        } */
+        .demoOne{
+            font-size: 20px;
+        }
+        div{
+
+        }
+        #demoID{
+            color: pink;
+        }
+        table, td,th{
+
+        }
+        .menus, .menuItem, .Item{
+
+        }
+        .btn:hover{
+
+        }
+        .menuItem:link{}
+        .menuItem:hover{}
+        .menuItem:active{}
+        .menuItem:visited{}
+        tr:nth-child(){}
+        /* P::first-line{
+            color: blue;
+        }
+        p::first-letter{
+            font-size: 70px;
+        } */
+        a[target]{
+            background-color: yellow;
+        }
+        a[target*="_blank"]{
+            background-color: orange;
+        }
+        .heroSection p{   /*All children */
+            background-color: yellow;
+        } 
+        .heroSection > p{    /*Only Child */
+            background-color: orange;
+        }
+        .heroSection div + p { /*  next sibling */
+            background-color: rgb(184, 147, 219);
+        }
+        .heroSection div ~ p{    /*  next All siblings */
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <pre>
+        1 Simple Selector
+            i. Element Selector
+            ii. Class Selector
+            iii. ID Selector
+        2 Universal Selector
+        3 Grouping Selectors
+        5 pseudo Class Selectors 
+        6 pseudo Elements Selectors
+        7 Attribute Selector
+        8 Combinator selectors (select elements based on a specific relationship between them)
+            i. Descendant combinator (space)
+            ii. Next sibling combinator (+)
+            iii. Child combinator (>)
+            iV. Subsequent-sibling combinator (~)
+
+    </pre>
+    <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, quos.</p>
+    <div class="demoOne" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad laboriosam quasi enim tenetur consectetur deserunt magni consequuntur ipsam fugiat suscipit, quaerat at voluptates, rerum perferendis impedit facere sunt expedita? Ad!</div>
+    <div id="demoID" ></div>
+    <a href="http://www.google.com" >Go to google</a>
+    <a href="http://www.google.com" target="">Go to google</a>
+    <a href="http://www.google.com" target="_blank">Go to google</a>
+
+
+<div class="heroSection">
+    <div class="leftSide">
+        <h3>Lorem ipsum dolor sit.</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, corporis!</p>
+        <div></div>
+        <p>Lorem, ipsum dolor.</p>
+        ,<p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+    </div>
+    <div class="rightSide">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, dolores!</p>
+
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, adipisci!</p>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+    <div>Lorem, ipsum dolor.</div>
+</div>
+
+    </body>
+</html>
