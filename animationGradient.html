@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .redBox{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .scaleBox:hover{
+            transform: scale(0.5,0.5);
+        }
+        .transformBox:hover{
+            /* transform: translateX(100px); */
+            /* transform: translateY(100px); */
+            transform: translate(100px, 200px);
+        }
+        .rotatemBox{
+            /* transform: rotate(60deg); */
+            /* transform: rotate(-40deg); */
+            transform: rotate(180deg);
+        }
+        .skewBox{
+            /* transform: skewX(45deg); */
+            /* transform: skewY(45deg); */
+            transform:skew(15deg, 10deg);
+        }
+        .scaleOnTimeBox{
+            border: 1px solid blue;
+            transition: transform 5s, color 4s, font-size 4s ,border-radius 5s ;
+            margin-left: 200px;
+        }
+        .scaleOnTimeBox:hover{
+            transform: scale(2,2);
+            color: white;
+            font-size: 20px;
+            border-radius: 50%;
+        }
+        .aniBGBox{
+            animation: bgColorChange 7s 5s infinite;
+        }
+
+
+        @keyframes bgColorChange{
+            from{background-color: red;}
+            to{background-color: green; color: white;}
+        }
+        .blinkBox{
+            height: 30px;
+            width: 70px;
+            animation: blinkText 10s linear 2s 5 normal forwards;
+        }
+        @keyframes blinkText{
+            0%{background-color: red; color: black;}
+            10%{transform: translateX(100px);}
+            20%{background-color: green; color:white;}
+            30%{transform: translate(0px);}
+            40%{background-color: blue; color: yellow;transform: translate(700px);}
+            60%{background-color: aliceblue;color: red;transform: rotate(-60deg);}
+            80%{background-color: chartreuse;color:blueviolet;transform: rotate(60deg);}
+            95%{transform: translate(0px);}
+            100%{background-color: black; color:white;}
+        }
+        .box111{
+            height: 100px;
+            width: 100px;
+        }
+        .lGrad{
+            background-image: linear-gradient(to right bottom, red,green, yellow);
+        }
+        .rGrad{
+            background-image: radial-gradient(black,white, red);
+        }
+        .cGrad{
+            background-image: conic-gradient(pink,purple);
+        }
+    </style>
+</head>
+<body>
+    <div class="box111 lGrad"></div>
+    <div class="box111 rGrad"></div>
+    <div class="box111 cGrad"></div>
+
+
+    <pre>
+        Linear Gradient 
+        radial Gradient
+        conic Gradient
+    </pre>
+    <div class="blinkBox">PROMISE</div>
+    <div class="redBox aniBGBox">PROMISE</div>
+
+    <div style="height: 200px;"></div>
+    <div class="redBox scaleOnTimeBox">PROMISE</div>
+
+    <div class="redBox"></div>
+    
+    <div class="redBox scaleBox"></div>
+    <div class="redBox transformBox"></div>
+    <div class="redBox rotatemBox">AAAAAAAAA</div>
+    <div style="margin-bottom: 200px;"></div>
+    <div class="redBox skewBox" style="border: 2px solid black;">AAAAAAAAA</div>
+
+
+
+</body>
+</html>
