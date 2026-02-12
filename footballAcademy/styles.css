@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.foundingAca{
+    display: flex;
+    width: 80%;
+    margin: 10px auto;
+}
+.imgDiv img{
+    width: 550px;
+    height: 391px;
+}
+.contentDiv{
+    padding: 30px;
+}
+.headingFounding{
+    border-left: 9px solid #B53232;
+    font-size: 50px;
+    padding-left: 5px;
+    line-height: 90%;
+}
+.contentDiv p{
+    margin-bottom: 5px;
+    font-size: 16px;
+}
