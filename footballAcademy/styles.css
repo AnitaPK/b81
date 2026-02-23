@@ -1,9 +1,17 @@
+:root{
+    --bodyBGColor :#B9B9B9;
+    --highLightMarron :#B53232;
+    --font50:50px;
+
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+body{
+    background-color:var(--bodyBGColor);
+}
 
 
 .foundingAca{
@@ -19,8 +27,8 @@
     padding: 30px;
 }
 .headingFounding{
-    border-left: 9px solid #B53232;
-    font-size: 50px;
+    border-left: 9px solid var(--highLightMarron);
+    font-size: var(--font50);
     padding-left: 5px;
     line-height: 90%;
 }
