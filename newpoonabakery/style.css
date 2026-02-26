@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+body{
+    background-color: #93ac93;
+}
+.Navbar{
+    position: sticky;
+    top:0;
+    z-index: 1;
+}
+nav{
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 4rem;
+    align-items: center;
+}
+
+.navLists{
+    list-style-type: none;
+}
+.navItem{
+    display: inline-block;
+    margin: 20px 30px;
+}
+
+.navLink{
+    /* font-family: cursive; */
+    font-size: x-large;
+    color: red;
+    text-decoration: none;
+}
+.navLink:hover{
+    color: yellow;
+}
+.logoDiv img{
+    border-radius: 50%;
+}
+.borderRight{
+    /* border-right: 1px solid gray; */
+    width: 2px;
+    height: 50px;
+     background-color: gray;
+     display: inline-block;
+     margin-top: 50px;
+}
