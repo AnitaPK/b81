@@ -48,3 +48,31 @@ nav{
      display: inline-block;
      margin-top: 50px;
 }
+.card{
+    position: relative;
+border: 3px solid black;
+padding: 10px;
+
+
+}
+.prodNameOnHover{
+display: none;
+position: absolute;
+bottom: 10px;
+background-color: #ffa600;
+width: 93%;
+text-align: center;
+color: black;
+
+}
+
+.card:hover img{ 
+    opacity: 0.4;
+}
+.card:hover{
+    border-color:  #ffa600;
+}
+.card:hover .prodNameOnHover{
+    display: block;
+    opacity: 1;
+}
