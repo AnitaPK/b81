@@ -75,4 +75,12 @@ fruits.forEach((fruit,i)=>{
     console.log(i, 'Love to eat', fruit)
 })
 
+students = ['John', 'Tom','Jerry']
+for(i=0;i<students.length;i++){
+    console.log(students[i])
+}
+console.log('-------------------')
+students.map((studName, index)=>{
+    console.log(studName)
+})
 
