@@ -84,3 +84,7 @@ students.map((studName, index)=>{
     console.log(studName)
 })
 
+FilterNumbers  = ['peocock', 'mango', 'blue', 'laptop', 'Billing', 'Building', 'Street','Board']
+
+
+// starts with 'b'
