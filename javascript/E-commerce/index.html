@@ -30,7 +30,8 @@
                     </li>
                 </ul>
                 <div class="d-flex" role="search">
-                    <a href="./cart.html" class="nav-link">Cart<sup>0</sup></a>
+                    <a href="./cart.html" class="nav-link">Cart<sup class="badge rounded-pill text-bg-danger" id="cartLength">0</sup></a>
+                    <!-- add icon for basket from  fontAwesome  -->
                 </div>
             </div>
         </div>
@@ -66,10 +67,12 @@
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="category" placeholder="category">
                             <label for="category">Category</label>
+                            <!-- add select options for category  -->
                         </div>
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="brand" placeholder="brand">
                             <label for="brand">Brand</label>
+                            <!-- add select option for brand  -->
                         </div>
                         <div class="form-floating mb-3">
                             <input type="number" class="form-control" id="price" placeholder="price">

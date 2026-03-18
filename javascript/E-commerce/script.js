@@ -4,10 +4,12 @@ categoryElmt = document.querySelector('#category')
 brandElmt = document.querySelector('#brand')
 priceElmt = document.querySelector('#price')
 quantityElmt = document.querySelector('#quantity')
+cartLengthElmt = document.getElementById('cartLength')
 
 const renderProductsElmt = document.querySelector('#renderProducts')
 
 products = []
+cart = []
 
 function saveToLocal(p) {
     localStorage.setItem('B81', JSON.stringify(p))
@@ -15,22 +17,27 @@ function saveToLocal(p) {
 function getFromLocal() {
     return JSON.parse(localStorage.getItem('B81'))
 }
+function saveCartToLocal(c){
+    localStorage.setItem('Cart81', JSON.stringify(c))
+}
+
+function getCartFromLocal (){
+    return JSON.parse(localStorage.getItem('Cart81'))
+}
 
 function renderProducts() {
     renderProducts = getFromLocal()
     console.log(renderProducts)
-    renderProductsElmt.innerHTML = renderProducts.map((prod, i) => `
+    renderProductsElmt.innerHTML = renderProducts.map((prod, index) => `
             <div class='col-12 col-md-6 col-lg-4 mr-2'>
 <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">${prod.title}</h5>
-    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+    <h4 class="card-title">${prod.title}</h4>
+    <p class="card-text">${prod.description}</p>
+    <h5>Price : &#8377; <span>${prod.price}</span></h5>
+    <button class="btn btn-primary" onclick="addToCart(${prod.id})">Add To Cart</button>
   </div>
 </div>
-
 
             </div>
     `).join('')
@@ -67,9 +74,30 @@ function AddNewProduct() {
     categoryElmt.value = ''
     brandElmt.value = ''
     priceElmt.value = ''
-    quantityElmt.value = ''
+    quantityElmt.value = '' 
+    // close the modal after succesfully added prodcut 
 }
 
+function addToCart(id){
+    const getCArtFromLocal = getCartFromLocal()
+
+    getProd = getFromLocal()
+
+    findIndex1 = getProd.findIndex((p)=> p.id == id)
+    if(findIndex1 == -1 ){
+        alert('Cant add to cart')
+    }
+
+    newCartItem = getProd[findIndex1]
+
+    // create new object for id,name and price only 
+    // add this object to cart
+
+    getCArtFromLocal.push(newCartItem)
+    saveCartToLocal(getCArtFromLocal)
+    console.log(getCArtFromLocal)
+    cartLengthElmt.textContent = getCArtFromLocal.length
+}
 
 
 
@@ -81,6 +109,13 @@ renderProducts()
     if (!getProd) {
         saveToLocal(products)
     }
+
+    getCart = getCartFromLocal()
+    if(!getCart){
+        saveCartToLocal(cart)
+    }
+    cartLengthElmt.textContent = getCart.length
+
 })
 
 
