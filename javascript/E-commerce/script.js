@@ -90,7 +90,9 @@ function addToCart(id){
 
     newCartItem = getProd[findIndex1]
 
-    // create new object for id,name and price only 
+    // create new object for id,name and price and new property as quantity only 
+    // Before add check that item is presnt or not in cart array 
+    // if present increase quantity by 1
     // add this object to cart
 
     getCArtFromLocal.push(newCartItem)
