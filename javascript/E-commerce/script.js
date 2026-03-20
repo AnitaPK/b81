@@ -28,6 +28,7 @@ function getCartFromLocal (){
 function renderProducts() {
     renderProducts = getFromLocal()
     console.log(renderProducts)
+
     renderProductsElmt.innerHTML = renderProducts.map((prod, index) => `
             <div class='col-12 col-md-6 col-lg-4 mr-2'>
 <div class="card" style="width: 18rem;">
@@ -90,22 +91,48 @@ function addToCart(id){
 
     newCartItem = getProd[findIndex1]
 
-    // create new object for id,name and price and new property as quantity only 
-    // Before add check that item is presnt or not in cart array 
+    // Before add check that item is presnt or not in cart array
     // if present increase quantity by 1
+
+    productInCart = getCArtFromLocal.find((p,i)=>p.product_id == newCartItem.id)
+
+    indexOfProdInCart = getCArtFromLocal.findIndex((p,i)=>p.product_id == newCartItem.id)
+
+
+
+    if(indexOfProdInCart == -1){
+
+    // create new object for product id, product name and product price 
+    // and new property as quantity of number ofproduct in cart only 
+    // product in cart new id 
+
+    newProdINCart = {
+        id:Date.now(),
+        product_id:newCartItem.id,
+        product_name:newCartItem.title,
+        product_price:newCartItem.price,
+        quantity_inCart:1
+    }
     // add this object to cart
 
-    getCArtFromLocal.push(newCartItem)
+    // getCArtFromLocal.push(newCartItem)
+    getCArtFromLocal.push(newProdINCart)
+
     saveCartToLocal(getCArtFromLocal)
     console.log(getCArtFromLocal)
     cartLengthElmt.textContent = getCArtFromLocal.length
+    }else{
+    getCArtFromLocal[indexOfProdInCart].quantity_inCart = productInCart.quantity_inCart + 1
+    saveCartToLocal(getCArtFromLocal)
+    }
+
+
 }
 
 
 
 
 window.addEventListener('DOMContentLoaded', () => {
-renderProducts()
     getProd = getFromLocal()
 
     if (!getProd) {
@@ -116,6 +143,7 @@ renderProducts()
     if(!getCart){
         saveCartToLocal(cart)
     }
+renderProducts()
     cartLengthElmt.textContent = getCart.length
 
 })

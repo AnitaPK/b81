@@ -41,7 +41,16 @@
     <!-- Hero Section  -->
 
     <h1 class="text-center">Products</h1>
+<nav><input type=search /> 
+    <select>
+        <option>Select option</option>
+        <option>Filter By category</option>
+        <option>filter by brand </option>
+        <option>low to high </option>
+        <option>high to low</option>
 
+    </select>
+     </nav>
     <div class="container text-center">
         <div class="row" id="renderProducts"></div>
     </div>
@@ -65,14 +74,25 @@
                             <label for="description">Description</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="category" placeholder="category">
+                            <!-- <input type="text" class="form-control" id="category" placeholder="category"> -->
                             <label for="category">Category</label>
                             <!-- add select options for category  -->
+                              
+                             <select id="category">
+                                <option value="">select options</option>
+                                <option value="Electronics">Electronics</option>
+                                <option value="Kitchen Accessories">Kitchen Accessories</option>
+                             </select>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="brand" placeholder="brand">
+                            <!-- <input type="text" class="form-control" id="brand" placeholder="brand"> -->
                             <label for="brand">Brand</label>
                             <!-- add select option for brand  -->
+                               <select id="brand">
+                                <option value="">select options</option>
+                                <option value="Electronics">Samsung</option>
+                                <option value="Kitchen Accessories">Hokins</option>
+                             </select>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="number" class="form-control" id="price" placeholder="price">
