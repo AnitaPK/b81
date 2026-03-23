@@ -24,12 +24,11 @@ function saveCartToLocal(c){
 function getCartFromLocal (){
     return JSON.parse(localStorage.getItem('Cart81'))
 }
-
-function renderProducts() {
-    renderProducts = getFromLocal()
+function renderProducts(renProd) {
+    const renderProducts1 = renProd || getFromLocal()
     console.log(renderProducts)
 
-    renderProductsElmt.innerHTML = renderProducts.map((prod, index) => `
+    renderProductsElmt.innerHTML = renderProducts1.map((prod, index) => `
             <div class='col-12 col-md-6 col-lg-4 mr-2'>
 <div class="card" style="width: 18rem;">
   <div class="card-body">
@@ -43,6 +42,24 @@ function renderProducts() {
             </div>
     `).join('')
 }
+
+
+
+function searchByName(){
+    searchInputValue = document.getElementById('searchInput').value
+    const renderProducts2 = getFromLocal()
+
+    const prodSearchByName = renderProducts2.filter((p)=>p.title.toLowerCase().includes(searchInputValue.toLowerCase()))
+
+    console.log(prodSearchByName)
+    renderProducts(prodSearchByName)
+}
+
+function clearFilter(){
+    renderProducts()
+}
+
+
 
 
 
