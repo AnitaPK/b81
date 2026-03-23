@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body class="bg-primary">
+
+    <div class="container w-50">
+        <div class="row">
+            <div class="col-12 col-md-6 p-5">
+                <h3 class="text-white" 
+                style="border-left: 5px solid white; padding-left: 9px; margin-top:20px;">
+                OTP <br /> VARIFICATION <br />JAVASCRIPT
+                </h3>
+            </div>
+            <div class="col-12 col-md-6 p-5">
+                <div class="conatiner rounded bg-light p-4">
+                    <i class="bi bi-alipay"></i>
+                    <p class="lead text-center">Enter OTP Code</p>
+                    <div class="container ">
+                    <div class="d-flex justify-content-around mb-2">
+                    <input type="test" size="1" id="firstDigit" oninput="moveToNext('secondDigit')"/>
+                    <input type="test" size="1" id="secondDigit" oninput="moveToNext('ThirdDigit')" />
+                    <input type="test" size="1" id="ThirdDigit" oninput="moveToNext('FourthDigit')" />
+                    <input type="test" size="1" id="FourthDigit" oninput="moveToNext('btnVarify')" />
+                    </div>
+                    <button class="btn btn-primary w-100" onclick="VarifyOTP()" id="btnVarify">Varify OTP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="container w-25" style="position: absolute; bottom: 20px; left: 20px;">
+    <button onclick="generateOTP()">Generate OTP</button>
+</div>
+<script>
+    function generateOTP(){
+         otp = String(1000 + Math.floor(Math.random() *9000))
+        
+        alert(`Your OTP ${otp}`)
+    }
+
+    function VarifyOTP(){
+        otpFirst =document.getElementById('firstDigit')
+        otpSecond = document.getElementById('secondDigit')
+        otpThird = document.getElementById('ThirdDigit')
+        otpFourth = document.getElementById('FourthDigit')
+
+        otpFromUser =  otpFirst.value+otpSecond.value+otpThird.value+otpFourth.value
+
+        if(otp == otpFromUser){
+            alert("Varified successfully")
+        }else{
+            alert("Invalid OTP")
+        }
+        document.getElementById('firstDigit').value = ''
+        document.getElementById('secondDigit').value = ''
+        document.getElementById('ThirdDigit').value = '' 
+        document.getElementById('FourthDigit').value = ''
+    }
+
+
+    function moveToNext(nextElmt){
+
+        document.getElementById(nextElmt).focus()
+
+        // validation for digit should digit 0 -9 
+        //check length 
+    }
+
+
+
+
+
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
