@@ -3,8 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    .textAll{
+        text-align: center;
+    }
+    .colorBlue{
+        color: blue;
+    }
+    .bgGray{
+        background-color: gray;
+    }
+</style>
+
 </head>
 <body>
+<h6 id="heading1">HEllo</h1>
+<script>
+    h1Elmt = document.getElementById("heading1")
+    h1Elmt.setAttribute("class","colorBlue")
+    h1Elmt.classList.add("textAll","bgGray")
+    h1Elmt.classList.remove("colorBlue")
+</script>
+<button id="toggleBTN"><img src="../assets/offToggleBTN.jpeg" id="imgToggle"/></button>
+
+<button id="toggleBTN">Click me to change </button>
+
+<script>
+    function toggleFunction(){
+        imgElmt = document.getElementById("imgToggle")
+        console.log(imgElmt.getAttribute('src'),"**********")
+        attributeIMGVALUE = imgElmt.getAttribute('src')
+        if(attributeIMGVALUE == '../assets/offToggleBTN.jpeg' ){
+        imgElmt.setAttribute("src", '../assets/onToggleBTN.jpeg')
+        }else{
+            imgElmt.setAttribute("src","../assets/offToggleBTN.jpeg")
+        }
+    }
+    btnElement = document.querySelector("#toggleBTN")
+    btnElement.addEventListener("click",toggleFunction)
+</script>
+
     <h1>Hello DOM</h1>
 
     <a href="hhtpp://www.google.com" target="_self" >Go to Google</a>
@@ -33,5 +71,36 @@
 
 
     <script src="./dom.js"></script>
+
+<section id="newSection"></section>
+
+<script>
+    newH3Elmt = document.createElement('h3')
+    console.log(newH3Elmt)
+
+    msgForH3 = document.createTextNode("I am new element")
+    
+
+    newH3Elmt.appendChild(msgForH3)
+    console.log(newH3Elmt)
+
+    newH3Elmt.style.color = "#ff7878"
+
+
+    secElement = document.querySelector("#newSection")
+secElement.appendChild(newH3Elmt)
+</script>
+
+<img src="../assets/bgImg.jpeg" id="imhElmt"/>
+<script>
+   imgElement = document.getElementById('imhElmt')
+   imgElement.setAttribute("alt","if img not shown this text will show")
+
+
+    imgElement.setAttribute("src","../assets/girlBook.jpeg")
+
+</script>
+
+
 </body>
 </html>
