@@ -3,6 +3,7 @@ import projects from '../projectList'
 import { Link } from 'react-router-dom'
 
 const Projects = () => {
+    
     return (
         <div className='box' style={{ backgroundColor: "red" }}>
 

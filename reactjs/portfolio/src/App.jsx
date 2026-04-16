@@ -8,6 +8,8 @@ import ContactMe from './pages/ContactMe'
 import Footer from './components/Footer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ProjectDetails from './pages/ProjectDetails'
+import Likes from './components/project/Likes'
+import Comments from './components/project/Comments'
 const App = () => {
   return (
     <BrowserRouter>
@@ -17,7 +19,12 @@ const App = () => {
         <Route path='/' element={<Home />} ></Route>
 
         <Route path='/projects' element={<Projects />} ></Route>
-        <Route path='/projects/:projectID' element={<ProjectDetails />}></Route>
+        <Route path='/projects/:projectID' element={<ProjectDetails />}>
+
+          <Route path='like' element={<Likes />}></Route>
+          <Route path='comments' element={<Comments />}></Route>
+
+        </Route>
 
 
         <Route path='/personal_info' element={<PersonalDetails />} ></Route>
