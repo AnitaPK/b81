@@ -8,6 +8,8 @@ import Product from './components/Product'
 import Button from './components/Button'
 import ClassBasedProduct from './components/ClassBasedProduct'
 import Greet from './components/Greet'
+import Counter from './components/Counter'
+import UserDeatils from './components/UserDeatils'
 
 
 function App() {
@@ -18,6 +20,10 @@ function App() {
   }
   return (
     <>
+<UserDeatils />
+    <Counter />
+
+
   <Greet  user={{name:'Sana', session:5, exam:0}} />
   <Greet user={{name:'Shivam', session:2, exam:10}} />
   <Greet user={{name:'Akash', session:0,  exam:10}} />
