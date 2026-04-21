@@ -1,10 +1,29 @@
 import React from 'react'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import ProductList from '../components/ProductList'
 
 const Dashboard = ({loggedUser}) => {
     console.log("Dashboard",loggedUser)
   return (
     <>
-    <div> Welcome ; {loggedUser.userName}  to my Dashboard</div>
+
+    <Navbar loggedUser={loggedUser} />
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-2 bg-secondary text-white">
+          <input type='search' className='form-control'/>
+          <button className='btn btn-primary'>Search</button>
+          <div>Filter</div>
+          add drop down for filter
+        </div>
+        <div className="col-10">
+            <ProductList />
+        </div>
+      </div>
+    </div>
+
+    <Footer />
     </>
   )
 }
