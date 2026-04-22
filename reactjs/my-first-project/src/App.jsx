@@ -10,7 +10,8 @@ import ClassBasedProduct from './components/ClassBasedProduct'
 import Greet from './components/Greet'
 import Counter from './components/Counter'
 import UserDeatils from './components/UserDeatils'
-
+import UserDetails1 from './users/UserDetails'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,6 +21,7 @@ function App() {
   }
   return (
     <>
+    <UserDetails1 />
 <UserDeatils />
     <Counter />
 
