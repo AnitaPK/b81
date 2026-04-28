@@ -11,13 +11,15 @@ const Dashboard = ({loggedUser}) => {
     <Navbar loggedUser={loggedUser} />
     <div className="container-fluid">
       <div className="row">
-        <div className="col-2 bg-secondary text-white">
+        <div className="col-2 bg-secondary text-white" style={{height:"90vh"}}>
+          <div className='fixed-bottom ' style={{height:"90vh"}}>
           <input type='search' className='form-control'/>
           <button className='btn btn-primary'>Search</button>
           <div>Filter</div>
           add drop down for filter
+          </div>
         </div>
-        <div className="col-10">
+        <div className="col-10 ">
             <ProductList />
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Card from './Card'
 
 const ProductList = () => {
     const [products, setProducts] = useState([])
@@ -43,7 +44,6 @@ const ProductList = () => {
 }, [])
 
 
-
     if (loading) return <p>Loading....</p>
     if (error) return <p>404 Page</p>
     return (
@@ -53,7 +53,9 @@ const ProductList = () => {
                 <div className="row">
                     {
                         products.map((prod, i) => (
-                            <div className='col border' key={i}>{prod.name}</div>
+                            <div className='col mb-1' key={i}>
+                                <Card product={prod} />
+                            </div>
                         ))
                     }
                 </div>
