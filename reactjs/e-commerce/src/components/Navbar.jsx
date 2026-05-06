@@ -4,11 +4,13 @@ import { FaToggleOff, FaToggleOn } from "react-icons/fa6";
 import { ThemeContext } from '../Theme/ThemeProvider';
 import { Link } from 'react-router-dom';
 import { cartInitialState, cartReducer } from './cartReducer/cartReducer';
+import {CartContextAPI} from './cartReducer/CartProvider';
 
 const Navbar = ({ loggedUser }) => {
     // const [theme,setTheme] = useState('dark')
     const { theme, toggleTheme } = useContext(ThemeContext)
-    const [cartState, cartDispatch] = useReducer(cartReducer, cartInitialState)
+    // const [cartState, cartDispatch] = useReducer(cartReducer, cartInitialState)
+    const {cartState} = useContext(CartContextAPI)
 
 
 
@@ -37,13 +39,10 @@ const Navbar = ({ loggedUser }) => {
                         <span>
                             <FaShoppingCart />
                             <sup className={`badge badge-pill badge-danger me-4  ${theme == 'light' ? 'text-dark' : 'text-light'}`}>
-                                {cartState.cartLength}
+                                {cartState?.cartLength}
                             </sup>
                         </span>
                         </Link>
-
-
-
 
                         <button onClick={() => toggleTheme()}>
                             {theme == "light" ? <FaToggleOff /> : <FaToggleOn />}

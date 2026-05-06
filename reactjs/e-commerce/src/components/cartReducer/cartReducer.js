@@ -1,25 +1,29 @@
-function calculateCart(cartPrd, delCharges){
+export const cartInitialState = {
+    cartProducts: [],
+    DeliveryCharges: 100,
+    platformFee:10,
+    totalAmount: 0,
+    cartLength: 0
+};
+
+function calculateCart(cartPrd, delCharges, platformFee){
     let totalAmt = cartPrd.reduce(
         (acc, item) => acc + item.prod_price * (item.prodQuantity || 1),
         0
     );
 
-    totalAmt = totalAmt + delCharges;
+    totalAmt = totalAmt + delCharges + platformFee;
 
     return {
         cartProducts: cartPrd,
         DeliveryCharges: delCharges,
+        platformFee:platformFee,
         totalAmount: cartPrd.length ? totalAmt : 0,
         cartLength: cartPrd.length
     };
 }
 
-export const cartInitialState = {
-    cartProducts: [],
-    DeliveryCharges: 100,
-    totalAmount: 0,
-    cartLength: 0
-};
+
 
 export const cartReducer = (state, action) => {
     switch (action.type) {
@@ -50,11 +54,11 @@ export const cartReducer = (state, action) => {
                     cart_id: crypto.randomUUID(),
                     prodQuantity: 1
                 };
-
+                console.log(newProduct)
                 updatedCart = [...state.cartProducts, newProduct];
             }
 
-            return calculateCart(updatedCart, state.DeliveryCharges);
+            return calculateCart(updatedCart, state.DeliveryCharges, state.platformFee);
         }
 
         case 'QUANTITY_INCREASE': {
@@ -77,3 +81,4 @@ export const cartReducer = (state, action) => {
             return state;
     }
 };
+

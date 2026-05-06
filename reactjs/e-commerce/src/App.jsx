@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import ProductDetails from './components/ProductDetails'
 import CartPage from './pages/CartPage'
+import CartProvider from './components/cartReducer/CartProvider'
 
 const App = () => {
 
@@ -14,7 +15,7 @@ const App = () => {
 
 
   return (
-
+<CartProvider>
     <BrowserRouter>
       <Routes>
 
@@ -26,6 +27,7 @@ const App = () => {
 
       </Routes>
     </BrowserRouter>
+    </CartProvider>
   )
 }
 

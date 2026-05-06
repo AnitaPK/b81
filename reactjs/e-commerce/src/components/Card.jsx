@@ -2,17 +2,17 @@ import React, { useContext, useEffect, useReducer, useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { ThemeContext } from '../Theme/ThemeProvider'
 import { cartInitialState, cartReducer } from './cartReducer/cartReducer'
+import { CartContextAPI } from './cartReducer/CartProvider'
 
 const Card = ({ product }) => {
   const [p, setP] = useState()
   const {theme} = useContext(ThemeContext)
-  const [cartState, cartDispatch] = useReducer(cartReducer,cartInitialState)
+  const {cartState, cartDispatch} = useContext(CartContextAPI)
   //   useEffect(()=>{
   //     setP(product)
   //   },[])
   // console.log(product,"In card")
 function handleAddToCart(p){
-          console.log("CLICK CLICK CLICK")
           console.log("Dispatching ID:", p.id);
           cartDispatch({type:"ADD_TO_BAG", payload:{prod_id:p.id,prod_Name:p.name,prod_price:p.price}})
         }
