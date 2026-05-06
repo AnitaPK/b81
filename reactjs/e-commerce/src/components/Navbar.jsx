@@ -1,15 +1,21 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useReducer, useState } from 'react'
 import { FaShoppingCart } from "react-icons/fa";
-import { FaToggleOff,FaToggleOn } from "react-icons/fa6";
+import { FaToggleOff, FaToggleOn } from "react-icons/fa6";
 import { ThemeContext } from '../Theme/ThemeProvider';
+import { Link } from 'react-router-dom';
+import { cartInitialState, cartReducer } from './cartReducer/cartReducer';
 
 const Navbar = ({ loggedUser }) => {
     // const [theme,setTheme] = useState('dark')
-    const {theme,toggleTheme} = useContext(ThemeContext)
+    const { theme, toggleTheme } = useContext(ThemeContext)
+    const [cartState, cartDispatch] = useReducer(cartReducer, cartInitialState)
+
+
+
     return (
-        <nav 
-        className={`navbar navbar-expand-lg fixed-top ${theme == 'light' ?'bg-light' : 'bg-dark'}`} 
-        data-bs-theme={`${theme == 'light' ?'light':'dark'}`}>
+        <nav
+            className={`navbar navbar-expand-lg fixed-top ${theme == 'light' ? 'bg-light' : 'bg-dark'}`}
+            data-bs-theme={`${theme == 'light' ? 'light' : 'dark'}`}>
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">Savana</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,13 +28,24 @@ const Navbar = ({ loggedUser }) => {
                         </li>
 
                     </ul>
-                    <div 
-                    className={`d-flex ${theme=='light'? 'text-dark': 'text-light'}`}
-                    role="search"
+                    <div
+                        className={`d-flex ${theme == 'light' ? 'text-dark' : 'text-light'}`}
+                        role="search"
                     >
                         <i className='me-4'>Welcome, {loggedUser.userName}</i>
-                        <span><FaShoppingCart /><sup className='badge badge-pill badge-danger me-4'></sup></span>
-                        <button onClick={()=>toggleTheme()}>
+                        <Link to='/cart' >
+                        <span>
+                            <FaShoppingCart />
+                            <sup className={`badge badge-pill badge-danger me-4  ${theme == 'light' ? 'text-dark' : 'text-light'}`}>
+                                {cartState.cartLength}
+                            </sup>
+                        </span>
+                        </Link>
+
+
+
+
+                        <button onClick={() => toggleTheme()}>
                             {theme == "light" ? <FaToggleOff /> : <FaToggleOn />}
                         </button>
                     </div>

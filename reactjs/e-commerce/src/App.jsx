@@ -6,10 +6,11 @@ import Dashboard from './pages/Dashboard'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import ProductDetails from './components/ProductDetails'
+import CartPage from './pages/CartPage'
 
 const App = () => {
 
-    const [loggedUser, setLoggedUSer] = useState()
+  const [loggedUser, setLoggedUSer] = useState()
 
 
   return (
@@ -17,11 +18,11 @@ const App = () => {
     <BrowserRouter>
       <Routes>
 
-      <Route path='/' element={<LoginPage setLoggedUSer={setLoggedUSer}/>}></Route>
-      <Route path ='/register' element={<RegisterPage />}></Route>
-      <Route path='/dashboard' element={<Dashboard loggedUser={loggedUser}/>}>      </Route>
+        <Route path='/' element={<LoginPage setLoggedUSer={setLoggedUSer} />}></Route>
+        <Route path='/register' element={<RegisterPage />}></Route>
+        <Route path='/dashboard' element={<Dashboard loggedUser={loggedUser} />}>      </Route>
         <Route path='/product/:ID' element={<ProductDetails />}></Route>
-
+        <Route path='/cart' element={<CartPage />}></Route>
 
       </Routes>
     </BrowserRouter>

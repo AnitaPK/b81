@@ -12,10 +12,10 @@ const Dashboard = ({loggedUser}) => {
     <div className="container-fluid">
       <div className="row">
         <div className="col-2 bg-secondary text-white" style={{height:"90vh"}}>
-          <div className='fixed-bottom ' style={{height:"90vh"}}>
-          <input type='search' className='form-control'/>
+          <div className='' style={{height:"90vh"}}>
+          <input type='search' className=''/>
           <button className='btn btn-primary'>Search</button>
-          <div>Filter</div>
+          <div style={{width:'60px'}}>Filter</div>
           add drop down for filter
           </div>
         </div>
