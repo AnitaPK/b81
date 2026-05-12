@@ -13,6 +13,7 @@ import UserDeatils from './components/UserDeatils'
 import UserDetails1 from './users/UserDetails'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CoinReducer from './CoinReducer/CoinReducer'
+import RerenderConcept from './hooks/RerenderConcept'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,6 +23,7 @@ function App() {
   }
   return (
     <>
+    <RerenderConcept />
     <CoinReducer />
     <UserDetails1 />
 <UserDeatils />
